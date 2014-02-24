@@ -1,4 +1,4 @@
-SeedFile
+Seedfile
 =========
 
 Create ActiveRecord objects using a CSV file.
@@ -27,14 +27,14 @@ Nothing in the database.
 => #<ActiveRecord::Relation []>
 ```
 
-Create a new SeedFile instance. Pass in the path to the CSV and the model.
+Create a new Seedfile instance. Pass in the path to the CSV and the model.
 ```rb
->> data = SeedFile.new(path: 'data.csv', model: Car)
+>> data = Seedfile.new(path: 'data.csv', model: Car)
 ```
 
-`seed!` it.
+Seed it.
 ```
->> data.seed!
+>> data.seed
 ```
 
 Database is populated with data from the file.

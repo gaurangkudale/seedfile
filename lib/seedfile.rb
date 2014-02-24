@@ -1,16 +1,20 @@
 require 'active_record'
 require 'csv'
 
-class SeedFile
+class Seedfile
 
-  attr_accessor :path, :model, :attributes
+  class FileNotFoundError < StandardError;end
+  class InvalidModelError < StandardError;end
+
+  attr_accessor :path, :model
 
   def initialize(options)
     @path = options[:path]
     @model = options[:model]
+    check_for_errors
   end
 
-  def seed!
+  def seed
     CSV.foreach(@path, headers: true, header_converters: :symbol) do |line|
       @model.create(line.to_hash)
     end
@@ -19,8 +23,8 @@ class SeedFile
   private
 
   def check_for_errors
-    return unless File.exist?(@path)
-    return unless @model.is_a?(ActiveRecord::Base)
+    raise FileNotFoundError unless File.exist?(@path)
+    raise InvalidModelError unless @model.superclass == ActiveRecord::Base
   end
 
 end

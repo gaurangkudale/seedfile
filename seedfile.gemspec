@@ -1,12 +1,12 @@
 Gem::Specification.new do |gem|
-  gem.name          = 'seed_file'
-  gem.version       = '0.1.1'
-  gem.date          = '2014-02-23'
+  gem.name          = 'seedfile'
+  gem.version       = '0.1.0'
+  gem.date          = '2014-02-24'
   gem.summary       = 'Seed ActiveRecord objects'
   gem.description   = 'Create ActiveRecord objects using a CSV file'
   gem.authors       = ['James Zhang']
   gem.email         = 'jamesfzhang@icloud.com'
-  gem.homepage      = 'https://github.com/jamesfzhang/seed_file'
+  gem.homepage      = 'https://github.com/jamesfzhang/seedfile'
   gem.license       = 'MIT'
   gem.files         = Dir['README.md', 'LICENSE', 'lib/**/*', 'spec/**/*']
   gem.test_files    = Dir['spec/**/*']

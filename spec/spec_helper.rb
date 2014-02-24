@@ -1,6 +1,6 @@
 require 'bundler/setup'
 Bundler.setup
-require 'seed_file'
+require 'seedfile'
 
 ActiveRecord::Base.establish_connection(
   adapter: 'sqlite3',
